@@ -9,16 +9,12 @@
 export HISTIGNORE="&:ls:[bf]g:exit"
 export HISTSIZE=10000
 export HISTCONTROL=ignoredups
-export SVN_REPO=https://zhousvn.cmb.usc.edu/svn
-export SVN_EDITOR=vim
 
 # Matlab compiler variables
 # use the latest version of Matlab, if available, otherwise the default
 matlabroot=/usr/local/matlab-2010a
 # matlabroot=/usr/local/matlab
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$matlabroot/runtime/glnxa64:$matlabroot/bin/glnxa64:$matlabroot/sys/os/glnxa64:$matlabroot/sys/java/jre/glnxa64/jre/lib/amd64/native_threads:$matlabroot/sys/java/jre/glnxa64/jre/lib/amd64/server:$matlabroot/sys/java/jre/glnxa64/jre/lib/amd64"
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/groups/chklovskii/home/nuneziglesiasj/Projects/em_denoising/extsrc/SPAMS/libs_ext/mkl64"
-export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/groups/chklovskii/home/nuneziglesiasj/Projects/em_denoising/extsrc/SPAMS/libs_ext/mkl64"
 export MCR_INHIBIT_CTF_LOCK=1
 export PATH=$PATH:/usr/local/matlab-2010a/bin:/usr/local/matlab/bin:/opt/local/matlab/bin
 
@@ -30,11 +26,14 @@ export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/OpenCV/lib/pkgconfig"
 export EMROOT="$HOME/Projects/em_recon"
 export EM_CODE_DIR=$EMROOT/code
 export EM_BIN_DIR=$EMROOT/bin
+export RAY=$HOME/projects/ray
+export STATUTES=$HOME/projects/statutes
 export EMBIN=$EM_BIN_DIR
-export PYTHONPATH=$PYTHONPATH:$EM_CODE_DIR/lib
 export PATH=${PATH}:$EM_BIN_DIR
 
 export PATH=${PATH}:/groups/chklovskii/home/nuneziglesiasj/bin
+
+export PYTHONPATH=$PYTHONPATH:$EM_CODE_DIR/lib:$RAY:$STATUTES
 
 # Setting prompt
 parse_git_branch() {
@@ -51,35 +50,10 @@ export LSCOLORS=gxfxcxdxbxegedabagacad
 
 export KMP_DUPLICATE_LIB_OK=true
 
-export GITDIR=/groups/flyem/proj/code/git-repos/
 export VTK_DIR=/usr/lib64/vtk-5.4/
 
 # Vigra LD Library path
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib"
-
-# set a fancy prompt (non-color, unless we know we "want" color)
-#case "$TERM" in
-#xterm-color)
-#    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-#    ;;
-#*)
-#    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-#    ;;
-#esac
-
-# Comment in the above and uncomment this below for a color prompt
-#PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-
-# If this is an xterm set the title to user@host:dir
-#case "$TERM" in
-#xterm*|rxvt*)
-#    PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
-#    ;;
-#*)
-#    ;;
-#esac
-
-# export PS1="\u@\h,\w\$ "
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -96,10 +70,14 @@ alias gcv='g++ `pkg-config --cflags opencv` `pkg-config --libs opencv`'
 alias mvim='open -a MacVim'
 
 # some more ls aliases
-alias ls='ls -G'
-alias ll='ls -lG'
-#alias la='ls -A'
+alias ls='ls -hG'
+alias ll='ls -lhG'
+alias la='ls -hA'
 #alias l='ls -CF'
+
+# enable searching through history with already-typed string (Matlab style)
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
