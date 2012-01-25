@@ -6,8 +6,8 @@ else fn=~/.bashrc
 fi
 
 if [ -f $fn ]; then
-    bakfn = ${fn}.bak
+    bakfn=${fn}.bak
     mv $fn $bakfn
 fi
 
-mv `dirname $0`/bashrc $fn
+cp `dirname $0`/bashrc $fn
