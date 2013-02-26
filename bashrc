@@ -7,22 +7,26 @@
 
 # don't put duplicate lines in the history, or simple ls commands.
 # See bash(1) for more options
+
 export HISTIGNORE="&:ls:[bf]g:exit"
 export HISTCONTROL=ignoredups
 # keep 10,000 lines of history, instead of the usual 1,000
 export HISTSIZE=10000
 
-export PATH=${PATH}:/groups/chklovskii/home/nuneziglesiasj/bin
+### Setting path ###
 
-export PYTHONPATH=$PYTHONPATH:$EM_CODE_DIR/lib:$RAY:$STATUTES:$SYNGEO
+# Use home bin dir for some small utilities
+export PATH=$PATH:~/bin
 
-# Setting prompt
+### Setting prompt ###
+
+# In git repositories, add the current branch to the prompt
 parse_git_branch() {
 git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
+# pretty string that includes a timestamp and two-line prompt
 export PS1='\n\[\e[32;1m\]\u\[\e[0m\]\[\e[32m\]@\[\e[36m\]\h\[\e[33m\] \d \A \n\[\e[36m\] \w \[\e[33m\]$(parse_git_branch)\$\[\e[0m\] '
-# export PS1='\n\u@\h \d \A \n \w \$ '
 
 # git autocomplete
 mac_git_completion=/Volumes/Projects/git-completion/git-completion.bash
