@@ -5,22 +5,12 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-# don't put duplicate lines in the history. See bash(1) for more options
+# don't put duplicate lines in the history, or simple ls commands.
+# See bash(1) for more options
 export HISTIGNORE="&:ls:[bf]g:exit"
-export HISTSIZE=10000
 export HISTCONTROL=ignoredups
-
-# Matlab compiler variables
-# use the latest version of Matlab, if available, otherwise the default
-matlabroot=/usr/local/matlab-2010a
-# matlabroot=/usr/local/matlab
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$matlabroot/runtime/glnxa64:$matlabroot/bin/glnxa64:$matlabroot/sys/os/glnxa64:$matlabroot/sys/java/jre/glnxa64/jre/lib/amd64/native_threads:$matlabroot/sys/java/jre/glnxa64/jre/lib/amd64/server:$matlabroot/sys/java/jre/glnxa64/jre/lib/amd64"
-export MCR_INHIBIT_CTF_LOCK=1
-export PATH=$PATH:/usr/local/matlab-2010a/bin:/usr/local/matlab/bin:/opt/local/matlab/bin
-
-# OpenCV support in the cluster
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/OpenCV/lib"
-export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/OpenCV/lib/pkgconfig"
+# keep 10,000 lines of history, instead of the usual 1,000
+export HISTSIZE=10000
 
 # EM reconstruction pipeline setup
 export EMROOT="$HOME/Projects/em_recon"
