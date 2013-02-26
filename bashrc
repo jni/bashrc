@@ -18,6 +18,9 @@ export HISTSIZE=10000
 # Use home bin dir for some small utilities
 export PATH=$PATH:~/bin
 
+# Use anaconda
+export PATH=~/anaconda/bin:$PATH
+
 ### Setting prompt ###
 
 # In git repositories, add the current branch to the prompt
