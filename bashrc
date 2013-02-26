@@ -28,12 +28,13 @@ export EM_CODE_DIR=$EMROOT/code
 export EM_BIN_DIR=$EMROOT/bin
 export RAY=$HOME/projects/ray
 export STATUTES=$HOME/projects/statutes
+export SYNGEO=$HOME/projects/synapse-geometry
 export EMBIN=$EM_BIN_DIR
 export PATH=${PATH}:$EM_BIN_DIR
 
 export PATH=${PATH}:/groups/chklovskii/home/nuneziglesiasj/bin
 
-export PYTHONPATH=$PYTHONPATH:$EM_CODE_DIR/lib:$RAY:$STATUTES
+export PYTHONPATH=$PYTHONPATH:$EM_CODE_DIR/lib:$RAY:$STATUTES:$SYNGEO
 
 # Setting prompt
 parse_git_branch() {
