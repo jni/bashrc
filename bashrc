@@ -29,42 +29,28 @@ git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 export PS1='\n\[\e[32;1m\]\u\[\e[0m\]\[\e[32m\]@\[\e[36m\]\h\[\e[33m\] \d \A \n\[\e[36m\] \w \[\e[33m\]$(parse_git_branch)\$\[\e[0m\] '
 
 # git autocomplete
-mac_git_completion=/Volumes/Projects/git-completion/git-completion.bash
+git_completion=~/projects/git-completion/git-completion.bash
 if [ -f $mac_git_completion ]; then
     source $mac_git_completion
-elif [ -f $HOME/Projects.sparsebundle ]; then
+elif [ -d $HOME/Projects.sparsebundle ]; then
     open $HOME/Projects.sparsebundle
     source $mac_git_completion
 fi
 
 export LSCOLORS=gxfxcxdxbxegedabagacad
 
-export KMP_DUPLICATE_LIB_OK=true
-
-export VTK_DIR=/usr/lib64/vtk-5.4/
-
-# Vigra LD Library path
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib"
-
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+### Alias definitions ###
 
 #if [ -f ~/.bash_aliases ]; then
 #    . ~/.bash_aliases
 #fi
 
-alias cluster='ssh -Y nuneziglesiasj@login2.int.janelia.org'
-alias hpc='ssh -Y nunezigl@hpc-cmb.usc.edu'
-alias gcv='g++ `pkg-config --cflags opencv` `pkg-config --libs opencv`'
 alias mvim='open -a MacVim'
 
 # some more ls aliases
 alias ls='ls -hG'
 alias ll='ls -lhG'
 alias la='ls -hA'
-#alias l='ls -CF'
 
 # enable searching through history with already-typed string (Matlab style)
 bind '"\e[A": history-search-backward'
@@ -77,7 +63,8 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-# ssh-agent code from github: http://help.github.com/ssh-key-passphrases/
+### ssh-agent setup code from github. ###
+# See http://help.github.com/ssh-key-passphrases/
 
 SH_ENV="$HOME/.ssh/environment"
 
