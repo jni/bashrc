@@ -12,16 +12,6 @@ export HISTCONTROL=ignoredups
 # keep 10,000 lines of history, instead of the usual 1,000
 export HISTSIZE=10000
 
-# EM reconstruction pipeline setup
-export EMROOT="$HOME/Projects/em_recon"
-export EM_CODE_DIR=$EMROOT/code
-export EM_BIN_DIR=$EMROOT/bin
-export RAY=$HOME/projects/ray
-export STATUTES=$HOME/projects/statutes
-export SYNGEO=$HOME/projects/synapse-geometry
-export EMBIN=$EM_BIN_DIR
-export PATH=${PATH}:$EM_BIN_DIR
-
 export PATH=${PATH}:/groups/chklovskii/home/nuneziglesiasj/bin
 
 export PYTHONPATH=$PYTHONPATH:$EM_CODE_DIR/lib:$RAY:$STATUTES:$SYNGEO
