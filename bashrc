@@ -33,11 +33,11 @@ export PS1='\n\[\e[32;1m\]\u\[\e[0m\]\[\e[32m\]@\[\e[36m\]\h\[\e[33m\] \d \A \n\
 
 # git autocomplete
 git_completion=~/projects/git-completion/git-completion.bash
-if [ -f $mac_git_completion ]; then
-    source $mac_git_completion
+if [ -f $git_completion ]; then
+    source $git_completion
 elif [ -d $HOME/Projects.sparsebundle ]; then
     open $HOME/Projects.sparsebundle
-    source $mac_git_completion
+    source $git_completion
 fi
 
 export LSCOLORS=gxfxcxdxbxegedabagacad
