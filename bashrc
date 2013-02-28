@@ -37,6 +37,7 @@ if [ -f $git_completion ]; then
     source $git_completion
 elif [ -d $HOME/Projects.sparsebundle ]; then
     open $HOME/Projects.sparsebundle
+    sleep 1
     source $git_completion
 fi
 
