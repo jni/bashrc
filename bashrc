@@ -18,6 +18,20 @@ export HISTSIZE=10000
 # Use home bin dir for some small utilities
 export PATH=$PATH:~/bin
 
+# OSX Python paths
+if [ -d /Library/Frameworks/EPD64.framework/Versions/Current/bin ]; then
+    export PATH="/Library/Frameworks/EPD64.framework/Versions/Current/bin:$PATH"
+elif [ -d /Library/Frameworks/Python.framework/Versions/2.7/bin ]; then
+    export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH"
+fi
+
+# Use virtualenv and virtualenvwrapper if available
+if [ `command -v virtualenvwrapper.sh` ]; then
+    export WORKON_HOME=$HOME/venv
+    export PROJECT_HOME=$HOME/projects
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
+
 ### Setting prompt ###
 
 # In git repositories, add the current branch to the prompt
