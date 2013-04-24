@@ -70,6 +70,8 @@ alias la='ls -hA'
 # enable searching through history with already-typed string (Matlab style)
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
+set show-all-if-ambiguous on
+set completion-ignore-case on
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
