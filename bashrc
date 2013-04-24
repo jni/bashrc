@@ -29,7 +29,7 @@ fi
 if [ `command -v virtualenvwrapper.sh` ]; then
     export WORKON_HOME=$HOME/venv
     export PROJECT_HOME=$HOME/projects
-    source /usr/local/bin/virtualenvwrapper.sh
+    source `which virtualenvwrapper.sh`
 fi
 
 ### Setting prompt ###
