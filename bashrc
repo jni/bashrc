@@ -32,6 +32,11 @@ if [ `command -v virtualenvwrapper.sh` ]; then
     source `which virtualenvwrapper.sh`
 fi
 
+# If the Anaconda Python distribution is installed, use it
+if [ -d ~/anaconda ]; then
+    export PATH="~/anaconda/bin:$PATH"
+fi
+
 ### Setting prompt ###
 
 # In git repositories, add the current branch to the prompt
