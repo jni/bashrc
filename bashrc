@@ -34,7 +34,7 @@ fi
 
 # If the Anaconda Python distribution is installed, use it
 if [ -d ~/anaconda ]; then
-    export PATH="~/anaconda/bin:$PATH"
+    export PATH="${HOME}/anaconda/bin:$PATH"
 fi
 
 ### Setting prompt ###
