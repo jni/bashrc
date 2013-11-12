@@ -72,18 +72,16 @@ alias ls='ls -hG'
 alias ll='ls -lhG'
 alias la='ls -hA'
 
-# enable searching through history with already-typed string (Matlab style)
-bind '"\e[A": history-search-backward'
-bind '"\e[B": history-search-forward'
-set show-all-if-ambiguous on
-set completion-ignore-case on
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
+
+# enable searching through history with already-typed string (Matlab style)
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
 
 ### ssh-agent setup code from github. ###
 # See http://help.github.com/ssh-key-passphrases/

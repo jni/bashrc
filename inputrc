@@ -1,0 +1,6 @@
+
+# enable searching through history with already-typed string (Matlab style)
+set show-all-if-ambiguous on
+set completion-ignore-case on
+
+$include /etc/inputrc
