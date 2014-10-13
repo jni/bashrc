@@ -50,6 +50,11 @@ elif [ -d $HOME/Projects.sparsebundle ]; then
     source $git_completion
 fi
 
+# git function: sprout
+function sprout {
+    git checkout -b "$1" upstream/master
+}
+
 export LSCOLORS=gxfxcxdxbxegedabagacad
 
 ### Alias definitions ###
