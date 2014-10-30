@@ -52,7 +52,7 @@ fi
 
 # git function: sprout
 function sprout {
-    git checkout -b "$1" upstream/master
+    git checkout -b "$1" origin/master
 }
 
 export LSCOLORS=gxfxcxdxbxegedabagacad
