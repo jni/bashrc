@@ -148,3 +148,5 @@ function marks {
     ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
 }
 
+
+export RSTUDIO_WHICH_R=/Users/nuneziglesiasj/anaconda/envs/R/bin/R
