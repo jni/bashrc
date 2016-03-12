@@ -154,3 +154,7 @@ function marks {
 
 
 export RSTUDIO_WHICH_R=/Users/nuneziglesiasj/anaconda/envs/R/bin/R
+
+
+# Add path for Maven
+export PATH=$PATH:/opt/apache-maven-3.3.9/bin
