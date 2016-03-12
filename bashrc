@@ -30,6 +30,10 @@ if [ -d ~/anaconda ]; then
     export PATH="${HOME}/anaconda/bin:$PATH"
 fi
 
+if [ -d ~/conda ]; then
+    export PATH="${HOME}/conda/bin:$PATH"
+fi
+
 ### Setting prompt ###
 
 # In git repositories, add the current branch to the prompt
