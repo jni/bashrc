@@ -158,3 +158,7 @@ export RSTUDIO_WHICH_R=/Users/nuneziglesiasj/anaconda/envs/R/bin/R
 
 # Add path for Maven
 export PATH=$PATH:/opt/apache-maven-3.3.9/bin
+
+
+# Add shortcut for opening the current directory with PyCharm
+alias pycharm='open -a /Applications/PyCharm.app .'
