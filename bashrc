@@ -10,8 +10,8 @@
 
 export HISTIGNORE="&:ls:[bf]g:exit"
 export HISTCONTROL=ignoredups
-# keep 10,000 lines of history, instead of the usual 1,000
-export HISTSIZE=10000
+# keep 100,000 lines of history, instead of the usual 1,000
+export HISTSIZE=100000
 
 ### Setting path ###
 
@@ -41,8 +41,8 @@ parse_git_branch() {
 git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
-# pretty string that includes a timestamp and two-line prompt
-export PS1='\n\[\e[32;1m\]\u\[\e[0m\]\[\e[32m\]@\[\e[36m\]\h\[\e[33m\] \d \A \n\[\e[36m\] \w \[\e[33m\]$(parse_git_branch)\$\[\e[0m\] '
+# pretty string that includes a timestamp and three-line prompt
+export PS1='\n\[\e[32;1m\]\u\[\e[0m\]\[\e[32m\]@\[\e[36m\]\h\[\e[33m\] \d \A \n\[\e[36m\] \w \[\e[33m\]$(parse_git_branch)\n \$\[\e[0m\] '
 
 # git autocomplete
 git_completion=~/projects/git-completion/git-completion.bash
