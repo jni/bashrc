@@ -25,14 +25,11 @@ if [ `command -v virtualenvwrapper.sh` ]; then
     source `which virtualenvwrapper.sh`
 fi
 
-# If the Anaconda Python distribution is installed, use it
-if [ -d ~/anaconda ]; then
-    export PATH="${HOME}/anaconda/bin:$PATH"
-fi
 
-if [ -d ~/conda ]; then
-    export PATH="${HOME}/conda/bin:$PATH"
-fi
+# Add conda command
+. /home/jni/miniconda3/etc/profile.d/conda.sh
+# Enable the conda-forge environment
+conda activate cf
 
 ### Setting prompt ###
 
