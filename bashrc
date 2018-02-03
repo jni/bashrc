@@ -26,11 +26,6 @@ if [ `command -v virtualenvwrapper.sh` ]; then
 fi
 
 
-# Add conda command
-. /home/jni/miniconda3/etc/profile.d/conda.sh
-# Enable the conda-forge environment
-conda activate cf
-
 ### Setting prompt ###
 
 # In git repositories, add the current branch to the prompt
@@ -160,3 +155,8 @@ export PATH=$PATH:/opt/apache-maven-3.3.9/bin
 # Add shortcut for opening the current directory with PyCharm or Tower
 alias pycharm='open -a /Applications/PyCharm.app .'
 alias tower='open -a /Applications/Tower.app .'
+
+# Add conda command
+. /home/jni/miniconda3/etc/profile.d/conda.sh
+# Enable the conda-forge environment
+conda activate cf
